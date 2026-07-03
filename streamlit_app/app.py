@@ -3,7 +3,15 @@ import pandas as pd
 import joblib
 
 # Load trained model
-model = joblib.load("../model/model.pkl")
+import os
+import streamlit as st
+import pandas as pd
+import joblib
+
+# Load trained model
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(BASE_DIR, "..", "model", "model.pkl")
+model = joblib.load(model_path)
 
 # Page Configuration
 st.set_page_config(page_title="House Price Prediction")
